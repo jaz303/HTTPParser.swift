@@ -5,6 +5,11 @@ public typealias HTTPParserType = http_parser_type
 public typealias HTTPParserCallback = http_cb
 public typealias HTTPParserDataCallback = http_data_cb
 
+// TODO: http_method_str
+// TODO: http_errno_name
+// TODO: http_errno_description
+// TODO: http_parser_pause
+
 public class HTTPParser {
 	public static let version: UInt = http_parser_version()
 
@@ -124,10 +129,8 @@ public class HTTPParser {
 		set(cb) { settings.on_chunk_complete = cb }
 	}
 
-
-
 	//
-	// Callbacks
+	//
 
 	var parser = http_parser()
 	var settings = http_parser_settings()
